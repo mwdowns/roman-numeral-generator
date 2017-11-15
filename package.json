@@ -1,0 +1,14 @@
+{
+  "name": "roman-number-generator",
+  "version": "1.0.0",
+  "description": "roman number generator",
+  "main": "roman.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "mwdowns",
+  "license": "ISC",
+  "dependencies": {
+    "jasmine": "^2.8.0"
+  }
+}
