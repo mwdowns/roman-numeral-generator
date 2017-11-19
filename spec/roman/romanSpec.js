@@ -3,11 +3,6 @@ describe("Roman-Numerals", function() {
     var Roman = Original.toRoman;
     var numberGenerator = Original.numberGenerator;
     var placeCheck = Original.placeCheck;
-    
-    it('numberGenerator should print a string', function() {
-        var newRoman = numberGenerator(1);
-        expect(newRoman).toEqual(jasmine.any(String));
-    });
 
     it('checks for error if input is not a number', function() {
         expect(function() {Roman('5');}).toThrowError(Error, 'input must be a whole number');
@@ -52,7 +47,8 @@ describe("Roman-Numerals", function() {
         expect(thousands).toEqual(["M"]);
     });
 
-    it('should print correct numerals for 10s, 100s, and 1000s', function() {
+    it('toRoman should print correct numerals for 10s, 100s, and 1000s and empty string for 0', function() {
+        var newRoman0 = Roman(0);
         var newRoman10 = Roman(10);
         var newRoman40 = Roman(40);
         var newRoman50 = Roman(50);
@@ -62,6 +58,7 @@ describe("Roman-Numerals", function() {
         var newRoman900 = Roman(900);
         var newRoman1000 = Roman(1000);
         var newRoman3000 = Roman(3000);
+        expect(newRoman0).toEqual('');
         expect(newRoman10).toEqual('X');
         expect(newRoman40).toEqual('XL');
         expect(newRoman50).toEqual('L');

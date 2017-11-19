@@ -3,14 +3,8 @@ function toRoman(arabic) {
         throw new Error('input must be a whole number');
     }
     return arabic.toString().split("").reverse().map(function(arabic, index) {
-        return numberGenerator(arabic, index);
+        return getRomanForSingleNumber(parseInt(arabic), placeCheck(index));
     }).reverse().join("");
-}
-
-function numberGenerator(arabic, index) {
-    num = parseInt(arabic);
-    romanArr = placeCheck(index);
-    return getRomanForSingleNumber(num, romanArr); 
 }
 
 function getRomanForSingleNumber(num, romanArr) {
@@ -79,6 +73,7 @@ function nineChecker(num) {
 
 module.exports = {
     toRoman,
-    numberGenerator,
     placeCheck
 }
+
+console.log(toRoman(44));
